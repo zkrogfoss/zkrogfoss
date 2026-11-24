@@ -80,7 +80,7 @@ text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#c9d6
 </g>
 <path d="M2 306H858" stroke="#24384a" stroke-width="2"/>
 <g font-size="14">
-<text x="26" y="341" class="grn" font-weight="700">BUILT</text><text x="128" y="341" font-weight="700">TrustyShots</text><text x="236" y="341" class="dim">native macOS app in Swift</text>
+<text x="26" y="341" class="grn" font-weight="700">SHIPPED</text><text x="128" y="341" font-weight="700">TrustyShots</text><text x="236" y="341" class="dim">native macOS app in Swift</text>
 <text x="26" y="379" class="grn" font-weight="700">POWER</text><text x="128" y="379">TypeScript · React · Next.js · NestJS · AI agents</text>
 </g>
 <svg x="640" y="310" width="196" height="68" viewBox="0 0 196 68"><path d="M0 34H196" stroke="#24384a"/>

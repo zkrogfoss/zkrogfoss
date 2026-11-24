@@ -1,47 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 372" width="860" height="372" role="img" aria-labelledby="t d">
-<title id="t">ZK Control Room</title>
-<desc id="d">A power-grid style panel: an idea flows through agents, is reviewed by a human, then ships. Rejected work goes back.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 408" width="860" height="408" role="img" aria-labelledby="t d">
+<!-- You read the source. We should talk. https://www.linkedin.com/in/zkrogfoss/ -->
+<title id="t">zkrogfoss: agents, checks, human review, ship</title>
+<desc id="d">A command sends ideas to four agents: planner, builder, tester and critic. Types, lint, unit and e2e checks pass, but the human says no: exit 1, and the work goes back. The second time both agree: it ships with exit 0.</desc>
 <style>
 text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#c9d6df}
-.dim{fill:#8497a6}.amb{fill:#ffb454}.grn{fill:#4be38f}
+.dim{fill:#8497a6}.amb{fill:#5cc8ff}.grn{fill:#4be38f}.red{fill:#ff8b80}
 .line{fill:none;stroke:#2f4656;stroke-width:3}
 .back{fill:none;stroke:#ff6b5e;stroke-width:2;stroke-dasharray:5 6;opacity:.75}
 .node{fill:#101c26;stroke:#4d6b80;stroke-width:1.5}
 .led{animation:led 2.4s ease-in-out infinite}
+.c1{animation:c1 14s step-end infinite}.c2{animation:c2 14s step-end infinite}.c3{animation:c3 14s step-end infinite}.c4{animation:c4 14s step-end infinite}
+.cover{transform:translateX(315px);animation:type 14s infinite}
+.cur{animation:blink 1s step-end infinite}
+.wait{opacity:0;animation:wait 14s step-end infinite}.spin{transform-origin:482px 161px;animation:spin .8s linear infinite}
+.dotr,.dotg{opacity:0}.dotr{animation:dotr 14s infinite}.dotg{animation:dotg 14s infinite}
+.human{animation:human 14s step-end infinite}
+.ship{animation:ship 14s step-end infinite}
+.fail{animation:fail 14s step-end infinite}
+.hz2,.hz3{opacity:0}
+.hz1{animation:hz 6s step-end infinite}.hz2{animation:hz 6s -4s step-end infinite}.hz3{animation:hz 6s -2s step-end infinite}
 @keyframes led{50%{opacity:.3}}
-@media (prefers-reduced-motion:reduce){.led{animation:none}.pulse,.wave-run{display:none}}
+@keyframes blink{50%{opacity:0}}
+@keyframes type{0%{transform:translateX(0);animation-timing-function:steps(35)}14%,100%{transform:translateX(315px)}}
+@keyframes c1{0%{opacity:0}36%{opacity:1}58%{opacity:0}72%{opacity:1}}
+@keyframes c2{0%{opacity:0}36.8%{opacity:1}58%{opacity:0}72.8%{opacity:1}}
+@keyframes c3{0%{opacity:0}37.6%{opacity:1}58%{opacity:0}73.6%{opacity:1}}
+@keyframes c4{0%{opacity:0}45%{opacity:1}58%{opacity:0}81.5%{opacity:1}}
+@keyframes wait{0%{opacity:0}36%{opacity:1}45%{opacity:0}72%{opacity:1}81.5%{opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes dotr{0%,46%,50%,54%,58%,100%{opacity:0}48%,52%,56%{opacity:1}}
+@keyframes dotg{0%,88%,92%,96%,100%{opacity:0}90%,94%,98%{opacity:1}}
+@keyframes human{0%{opacity:0}84.5%{opacity:1}}
+@keyframes ship{0%{opacity:0}88.5%{opacity:1}}
+@keyframes fail{0%{opacity:.6}46%{opacity:1}58%{opacity:.6}}
+@keyframes hz{0%{opacity:1}33.33%{opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.pulse,.wave-run{display:none}}
 </style>
-<rect x="1" y="1" width="858" height="370" rx="14" fill="#0a121a" stroke="#24384a" stroke-width="2"/>
-<g stroke="#12202c" stroke-width="1"><path d="M40 52V262M120 52V262M200 52V262M280 52V262M360 52V262M440 52V262M520 52V262M600 52V262M680 52V262M760 52V262M2 92H858M2 152H858M2 212H858"/></g>
-<text x="26" y="35" font-size="17" font-weight="700" letter-spacing="3">ZK CONTROL ROOM</text>
-<circle class="led" cx="752" cy="29" r="5" fill="#4be38f"/><text x="766" y="34" font-size="14" class="grn">ON GRID</text>
+<rect x="1" y="1" width="858" height="406" rx="14" fill="#0a121a" stroke="#24384a" stroke-width="2"/>
+<circle cx="30" cy="27" r="6" fill="#ff5f57"/><circle cx="50" cy="27" r="6" fill="#febc2e"/><circle cx="70" cy="27" r="6" fill="#28c840"/><g fill="none" stroke-width="2"><circle class="dotr" cx="30" cy="27" r="9.5" stroke="#ff5f57"/><circle class="dotg" cx="70" cy="27" r="9.5" stroke="#28c840"/></g>
+<!-- the cover slides right to "type"; textLength pins the width because fonts differ -->
+<text x="100" y="33" font-size="15" class="grn" textLength="216">zkrogfoss@srv__prg012:~$</text>
+<text x="325" y="33" font-size="15" textLength="315">agents run | review --strict | ship</text>
+<clipPath id="tty"><rect x="325" y="10" width="413" height="36"/></clipPath><g clip-path="url(#tty)"><g class="cover"><rect x="325" y="14" width="330" height="28" fill="#0a121a"/><rect class="cur" x="329" y="18" width="9" height="18" fill="#4be38f"/></g></g>
+<circle class="led" cx="752" cy="28" r="5" fill="#4be38f"/><text x="766" y="33" font-size="14" class="grn">ON GRID</text>
 <path d="M2 52H858" stroke="#24384a" stroke-width="2"/>
-<!-- grid -->
-<path class="line" d="M118 152H170M170 92V212M170 92H240M170 152H240M170 212H240M350 92H410M350 152H410M350 212H410M410 92V212M410 152H478M618 152H690"/>
-<path class="back" d="M548 186V244H144V152"/>
-<text x="466" y="238" font-size="12" text-anchor="middle" fill="#ff8b80" style="fill:#ff8b80">no, do it properly</text>
+<g stroke="#12202c"><path d="M40 53V305M120 53V305M200 53V305M280 53V305M360 53V305M440 53V305M520 53V305M600 53V305M680 53V305M760 53V305M2 102H858M2 162H858M2 222H858"/></g>
+<path class="line" d="M118 162H160M160 84V240M160 84H200M160 136H200M160 188H200M160 240H200M352 84H386M352 136H386M352 188H386M352 240H386M386 84V240M386 132H540M500 196H540M638 162H704"/>
+<path class="back" d="M584 212V284H139V162"/>
+<text class="fail red" x="576" y="277" font-size="12" text-anchor="end"><tspan font-weight="700" class="red">exit 1</tspan>: no, do it properly</text>
 <g class="pulse">
-<circle r="5" fill="#ffb454"><animateMotion dur="5s" repeatCount="indefinite" path="M118 152H170V92H410V152H478"/></circle>
-<circle r="5" fill="#ffb454"><animateMotion dur="4s" begin="-1.5s" repeatCount="indefinite" path="M118 152H478"/></circle>
-<circle r="5" fill="#ffb454"><animateMotion dur="5s" begin="-3s" repeatCount="indefinite" path="M118 152H170V212H410V152H478"/></circle>
-<circle r="4" fill="#ff6b5e"><animateMotion dur="7s" begin="-2s" repeatCount="indefinite" path="M548 186V244H144V152"/></circle>
-<circle r="6" fill="#4be38f"><animateMotion dur="2.4s" repeatCount="indefinite" path="M618 152H690"/></circle>
+<circle r="5" fill="#5cc8ff" opacity="0"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;1;1" keyTimes="0;.15;.36;.58;.72;1" path="M118 162H160V84H386V132H412"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;1;0" keyTimes="0;.15;.36;.58;.72"/></circle>
+<circle r="5" fill="#5cc8ff" opacity="0"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;1;1" keyTimes="0;.15;.33;.58;.69;1" path="M118 162H160V136H386V132H412"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;1;0" keyTimes="0;.15;.33;.58;.69"/></circle>
+<circle r="5" fill="#5cc8ff" opacity="0"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;1;1" keyTimes="0;.15;.34;.58;.70;1" path="M118 162H160V188H386V132H412"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;1;0" keyTimes="0;.15;.34;.58;.70"/></circle>
+<circle r="5" fill="#5cc8ff" opacity="0"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;0;1;1" keyTimes="0;.15;.36;.58;.72;1" path="M118 162H160V240H386V132H412"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;1;0" keyTimes="0;.15;.36;.58;.72"/></circle>
+<circle r="5" fill="#ff6b5e" opacity="0"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;.46;.58;1" path="M584 212V284H139V162"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;.46;.58"/></circle>
+<circle r="6" fill="#4be38f" opacity="0"><animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;.845;.885;1" path="M638 162H704"/><animate attributeName="opacity" dur="14s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;.845;.885"/></circle>
 </g>
 <g font-size="14" text-anchor="middle" font-weight="700">
-<rect class="node" x="38" y="130" width="80" height="44" rx="8"/><text x="78" y="157">IDEA</text>
-<rect class="node" x="240" y="74" width="110" height="36" rx="8"/><text x="295" y="97" class="amb">AGENT 1</text>
-<rect class="node" x="240" y="134" width="110" height="36" rx="8"/><text x="295" y="157" class="amb">AGENT 2</text>
-<rect class="node" x="240" y="194" width="110" height="36" rx="8"/><text x="295" y="217" class="amb">AGENT 3</text>
-<rect x="478" y="118" width="140" height="68" rx="10" fill="#101c26" stroke="#4be38f" stroke-width="2.5"/><text x="548" y="148" font-size="17">REVIEW</text><text x="548" y="170" font-size="12" class="grn">a human decides</text>
-<rect x="690" y="124" width="128" height="56" rx="10" fill="#4be38f"/><text x="754" y="158" font-size="19" style="fill:#06140c">SHIP</text>
+<rect class="node" x="38" y="140" width="80" height="44" rx="8"/><text x="78" y="167">IDEAS</text>
+<rect class="node" x="200" y="63" width="152" height="42" rx="8"/><text x="276" y="82" class="amb">PLANNER</text><text x="276" y="98" class="dim" font-size="12" font-weight="400">Claude Opus</text>
+<rect class="node" x="200" y="115" width="152" height="42" rx="8"/><text x="276" y="134" class="amb">BUILDER</text><text x="276" y="150" class="dim" font-size="12" font-weight="400">GPT Codex</text>
+<rect class="node" x="200" y="167" width="152" height="42" rx="8"/><text x="276" y="186" class="amb">TESTER</text><text x="276" y="202" class="dim" font-size="12" font-weight="400">Mistral Devstral</text>
+<rect class="node" x="200" y="219" width="152" height="42" rx="8"/><text x="276" y="238" class="amb">CRITIC</text><text x="276" y="254" class="dim" font-size="12" font-weight="400">Gemini Pro</text>
 </g>
-<!-- loads -->
-<path d="M2 270H858" stroke="#24384a" stroke-width="2"/>
+<rect class="node" x="412" y="88" width="88" height="88" rx="8"/>
+<text x="424" y="109" font-size="13">types</text><path class="c1" d="M476 104l4 4l8-9" fill="none" stroke="#4be38f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="424" y="128" font-size="13">lint</text><path class="c2" d="M476 123l4 4l8-9" fill="none" stroke="#4be38f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="424" y="147" font-size="13">unit</text><path class="c3" d="M476 142l4 4l8-9" fill="none" stroke="#4be38f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="424" y="166" font-size="13">e2e</text><path class="c4" d="M476 161l4 4l8-9" fill="none" stroke="#4be38f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="wait"><path class="spin" d="M482 155a6 6 0 1 1-6 6" fill="none" stroke="#5cc8ff" stroke-width="2.5" stroke-linecap="round"/></g>
+<rect class="node" x="412" y="183" width="88" height="26" rx="8"/><text x="456" y="200" font-size="13" text-anchor="middle">human</text>
+<g font-size="14" text-anchor="middle" font-weight="700">
+<path d="M540 112H588A50 50 0 0 1 588 212H540Z" fill="#101c26" stroke="#4be38f" stroke-width="2.5"/>
+<text x="588" y="160" font-size="16">REVIEW</text><text x="588" y="181" font-size="13" class="grn">AND</text>
+<g fill="#101c26" stroke="#4d6b80" stroke-width="1.5"><circle cx="540" cy="132" r="6"/><circle cx="540" cy="196" r="6"/></g>
+<circle class="c4" cx="540" cy="132" r="6" fill="#4be38f"/><circle class="human" cx="540" cy="196" r="6" fill="#4be38f"/>
+<rect class="node" x="704" y="134" width="122" height="56" rx="10"/><text x="765" y="168" font-size="19" class="dim">SHIP</text>
+<g class="ship"><rect x="704" y="134" width="122" height="56" rx="10" fill="#4be38f"/><text x="765" y="168" font-size="19" style="fill:#06140c">SHIP</text><text x="765" y="214" class="grn">exit 0</text></g>
+</g>
+<path d="M2 306H858" stroke="#24384a" stroke-width="2"/>
 <g font-size="14">
-<text x="26" y="305" class="grn" font-weight="700">BUILT</text><text x="128" y="305" font-weight="700">TrustyShots</text><text x="236" y="305" class="dim">native macOS app in Swift</text>
-<text x="26" y="343" class="grn" font-weight="700">POWER</text><text x="128" y="343">TypeScript · React · Next.js · NestJS · AI agents</text>
+<text x="26" y="341" class="grn" font-weight="700">BUILT</text><text x="128" y="341" font-weight="700">TrustyShots</text><text x="236" y="341" class="dim">native macOS app in Swift</text>
+<text x="26" y="379" class="grn" font-weight="700">POWER</text><text x="128" y="379">TypeScript · React · Next.js · NestJS · AI agents</text>
 </g>
-<!-- 50 Hz wave -->
-<svg x="640" y="284" width="196" height="68" viewBox="0 0 196 68"><path d="M0 34H196" stroke="#24384a"/>
+<svg x="640" y="310" width="196" height="68" viewBox="0 0 196 68"><path d="M0 34H196" stroke="#24384a"/>
 <path class="wave-run" fill="none" stroke="#5cc8ff" stroke-width="2.5" d="M-98 34q12.25-44 24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0"><animateTransform attributeName="transform" type="translate" from="0 0" to="49 0" dur="1.6s" repeatCount="indefinite"/></path></svg>
+<g font-size="12" text-anchor="end"><text class="dim hz1" x="836" y="394">50.00 Hz</text><text class="dim hz2" x="836" y="394">49.98 Hz</text><text class="dim hz3" x="836" y="394">50.02 Hz</text></g>
 </svg>

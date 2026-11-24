@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 372" width="860" height="372" role="img" aria-labelledby="t d">
+<title id="t">ZK Control Room</title>
+<desc id="d">A power-grid style panel: an idea flows through agents, is reviewed by a human, then ships. Rejected work goes back.</desc>
+<style>
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#c9d6df}
+.dim{fill:#8497a6}.amb{fill:#ffb454}.grn{fill:#4be38f}
+.line{fill:none;stroke:#2f4656;stroke-width:3}
+.back{fill:none;stroke:#ff6b5e;stroke-width:2;stroke-dasharray:5 6;opacity:.75}
+.node{fill:#101c26;stroke:#4d6b80;stroke-width:1.5}
+.led{animation:led 2.4s ease-in-out infinite}
+@keyframes led{50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.led{animation:none}.pulse,.wave-run{display:none}}
+</style>
+<rect x="1" y="1" width="858" height="370" rx="14" fill="#0a121a" stroke="#24384a" stroke-width="2"/>
+<g stroke="#12202c" stroke-width="1"><path d="M40 52V262M120 52V262M200 52V262M280 52V262M360 52V262M440 52V262M520 52V262M600 52V262M680 52V262M760 52V262M2 92H858M2 152H858M2 212H858"/></g>
+<text x="26" y="35" font-size="17" font-weight="700" letter-spacing="3">ZK CONTROL ROOM</text>
+<circle class="led" cx="752" cy="29" r="5" fill="#4be38f"/><text x="766" y="34" font-size="14" class="grn">ON GRID</text>
+<path d="M2 52H858" stroke="#24384a" stroke-width="2"/>
+<!-- grid -->
+<path class="line" d="M118 152H170M170 92V212M170 92H240M170 152H240M170 212H240M350 92H410M350 152H410M350 212H410M410 92V212M410 152H478M618 152H690"/>
+<path class="back" d="M548 186V244H144V152"/>
+<text x="466" y="238" font-size="12" text-anchor="middle" fill="#ff8b80" style="fill:#ff8b80">no, do it properly</text>
+<g class="pulse">
+<circle r="5" fill="#ffb454"><animateMotion dur="5s" repeatCount="indefinite" path="M118 152H170V92H410V152H478"/></circle>
+<circle r="5" fill="#ffb454"><animateMotion dur="4s" begin="-1.5s" repeatCount="indefinite" path="M118 152H478"/></circle>
+<circle r="5" fill="#ffb454"><animateMotion dur="5s" begin="-3s" repeatCount="indefinite" path="M118 152H170V212H410V152H478"/></circle>
+<circle r="4" fill="#ff6b5e"><animateMotion dur="7s" begin="-2s" repeatCount="indefinite" path="M548 186V244H144V152"/></circle>
+<circle r="6" fill="#4be38f"><animateMotion dur="2.4s" repeatCount="indefinite" path="M618 152H690"/></circle>
+</g>
+<g font-size="14" text-anchor="middle" font-weight="700">
+<rect class="node" x="38" y="130" width="80" height="44" rx="8"/><text x="78" y="157">IDEA</text>
+<rect class="node" x="240" y="74" width="110" height="36" rx="8"/><text x="295" y="97" class="amb">AGENT 1</text>
+<rect class="node" x="240" y="134" width="110" height="36" rx="8"/><text x="295" y="157" class="amb">AGENT 2</text>
+<rect class="node" x="240" y="194" width="110" height="36" rx="8"/><text x="295" y="217" class="amb">AGENT 3</text>
+<rect x="478" y="118" width="140" height="68" rx="10" fill="#101c26" stroke="#4be38f" stroke-width="2.5"/><text x="548" y="148" font-size="17">REVIEW</text><text x="548" y="170" font-size="12" class="grn">a human decides</text>
+<rect x="690" y="124" width="128" height="56" rx="10" fill="#4be38f"/><text x="754" y="158" font-size="19" style="fill:#06140c">SHIP</text>
+</g>
+<!-- loads -->
+<path d="M2 270H858" stroke="#24384a" stroke-width="2"/>
+<g font-size="14">
+<text x="26" y="305" class="grn" font-weight="700">BUILT</text><text x="128" y="305" font-weight="700">TrustyShots</text><text x="236" y="305" class="dim">native macOS app in Swift</text>
+<text x="26" y="343" class="grn" font-weight="700">POWER</text><text x="128" y="343">TypeScript · React · Next.js · NestJS · AI agents</text>
+</g>
+<!-- 50 Hz wave -->
+<svg x="640" y="284" width="196" height="68" viewBox="0 0 196 68"><path d="M0 34H196" stroke="#24384a"/>
+<path class="wave-run" fill="none" stroke="#5cc8ff" stroke-width="2.5" d="M-98 34q12.25-44 24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0t24.5 0"><animateTransform attributeName="transform" type="translate" from="0 0" to="49 0" dur="1.6s" repeatCount="indefinite"/></path></svg>
+</svg>

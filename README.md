@@ -1,7 +1,9 @@
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="panel-dark.svg">
   <img src="panel-light.svg" alt="Ideas, agents, checks, human review, ship" width="860">
 </picture>
+</p>
 
 <br>
 
